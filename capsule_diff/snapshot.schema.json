@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:capsule-diff:snapshot:v1",
+  "title": "CapsuleDiff snapshot v1",
+  "$comment": "JSON Schema cannot enforce uniqueness of records by the (type, id) pair. Run capsule-diff validate for that additional check.",
+  "type": "object",
+  "required": ["schema_version", "snapshot_id", "created_at", "source_revision", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "snapshot_id": {"type": "string", "pattern": "\\S"},
+    "created_at": {"type": "string", "pattern": "\\S"},
+    "source_revision": {"type": "string", "pattern": "\\S"},
+    "records": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "status", "text"],
+        "properties": {
+          "id": {"type": "string", "pattern": "\\S"},
+          "type": {"enum": ["decision", "obligation", "assumption", "dependency", "evidence"]},
+          "status": {"type": "string", "pattern": "\\S"},
+          "text": {"type": "string", "pattern": "\\S"},
+          "topic_key": {"type": "string", "pattern": "\\S"},
+          "replaces_id": {"type": "string", "pattern": "\\S"},
+          "evidence_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "pattern": "\\S"}
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

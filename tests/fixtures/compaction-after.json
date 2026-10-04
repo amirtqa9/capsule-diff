@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "handoff-08",
+  "created_at": "2026-04-10T10:00:00Z",
+  "source_revision": "a8c931f",
+  "summary": "Auth implementation and handoff note are complete.",
+  "records": [
+    {"type": "evidence", "id": "design-auth", "status": "active", "text": "Auth design review"},
+    {"type": "obligation", "id": "handoff-note", "status": "done", "text": "Write handoff note", "owner": "docs-agent", "next_action": "Summarize decisions", "completion_evidence_ids": ["handoff-md"]},
+    {"type": "dependency", "id": "signing-key", "status": "required", "text": "Signing key supplied by deploy config"},
+    {"type": "decision", "id": "auth-scheme", "status": "active", "text": "Use rotating signed tokens", "evidence_ids": ["design-auth"]},
+    {"type": "assumption", "id": "clock-sync", "status": "active", "text": "Workers have synchronized clocks"}
+  ]
+}

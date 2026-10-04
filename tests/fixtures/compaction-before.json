@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "handoff-07",
+  "created_at": "2026-04-10T09:00:00Z",
+  "source_revision": "a8c931f",
+  "summary": "Auth implementation awaits tests and a handoff note.",
+  "records": [
+    {"type": "decision", "id": "auth-scheme", "status": "active", "text": "Use signed tokens", "evidence_ids": ["design-auth"]},
+    {"type": "obligation", "id": "auth-tests", "status": "open", "text": "Add token expiry regression tests", "owner": "auth-agent", "next_action": "Write expiry fixture"},
+    {"type": "obligation", "id": "handoff-note", "status": "open", "text": "Write handoff note", "owner": "docs-agent", "next_action": "Summarize decisions"},
+    {"type": "dependency", "id": "signing-key", "status": "required", "text": "Signing key supplied by deploy config"},
+    {"type": "evidence", "id": "design-auth", "status": "active", "text": "Auth design review"}
+  ]
+}

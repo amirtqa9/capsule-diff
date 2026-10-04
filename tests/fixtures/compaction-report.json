@@ -1,0 +1,97 @@
+{
+  "after_hash": "40b90501c9352d9e239c2e9a3ea6fb6b3f060dab37569d7d347efb018d46fdb9",
+  "after_snapshot_id": "handoff-08",
+  "before_hash": "f66d57b6b5235c39e03d6f71406a65be7f8c3dd727626c533164130e36878ec7",
+  "before_snapshot_id": "handoff-07",
+  "changes": [
+    {
+      "after_id": "clock-sync",
+      "before_id": null,
+      "change_id": "assumption:-->clock-sync",
+      "code": "added-record",
+      "field_deltas": {},
+      "kind": "added",
+      "match_basis": "unmatched",
+      "record_type": "assumption",
+      "risk": "info"
+    },
+    {
+      "after_id": "auth-scheme",
+      "before_id": "auth-scheme",
+      "change_id": "decision:auth-scheme->auth-scheme",
+      "code": "changed-active-decision",
+      "field_deltas": {
+        "text": {
+          "after": "Use rotating signed tokens",
+          "before": "Use signed tokens"
+        }
+      },
+      "kind": "modified",
+      "match_basis": "id",
+      "record_type": "decision",
+      "risk": "review"
+    },
+    {
+      "after_id": null,
+      "before_id": "auth-tests",
+      "change_id": "obligation:auth-tests->-",
+      "code": "lost-open-obligation",
+      "field_deltas": {},
+      "kind": "removed",
+      "match_basis": "unmatched",
+      "record_type": "obligation",
+      "risk": "high"
+    },
+    {
+      "after_id": "handoff-note",
+      "before_id": "handoff-note",
+      "change_id": "obligation:handoff-note->handoff-note",
+      "code": "resolved-obligation",
+      "field_deltas": {
+        "completion_evidence_ids": {
+          "after": [
+            "handoff-md"
+          ],
+          "before": null
+        },
+        "status": {
+          "after": "done",
+          "before": "open"
+        }
+      },
+      "kind": "modified",
+      "match_basis": "id",
+      "record_type": "obligation",
+      "risk": "review"
+    }
+  ],
+  "metadata_deltas": {
+    "created_at": {
+      "after": "2026-04-10T10:00:00Z",
+      "before": "2026-04-10T09:00:00Z"
+    },
+    "snapshot_id": {
+      "after": "handoff-08",
+      "before": "handoff-07"
+    },
+    "summary": {
+      "after": "Auth implementation and handoff note are complete.",
+      "before": "Auth implementation awaits tests and a handoff note."
+    }
+  },
+  "schema_version": 1,
+  "summary": {
+    "by_kind": {
+      "added": 1,
+      "modified": 2,
+      "removed": 1
+    },
+    "by_risk": {
+      "high": 1,
+      "info": 1,
+      "review": 2
+    },
+    "total": 4
+  },
+  "warnings": []
+}
